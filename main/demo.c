@@ -56,7 +56,17 @@ void demo_rhino(lv_obj_t *scr) {
   lv_obj_set_size(img1, rhino.header.w, rhino.header.h);
 }
 
-#define MAX_DEMO_COUNT 2
+void demo_hello_world(lv_obj_t *scr) {
+  lv_obj_t *label = lv_label_create(scr);
+  lv_label_set_text(label, "你好！hello world");
+  extern lv_font_t lv_font_msyh_20;
+  lv_obj_set_style_text_font(label, &lv_font_msyh_20, LV_STATE_DEFAULT);
+  lv_obj_set_style_text_color(label, lv_color_white(), LV_STATE_DEFAULT);
+  lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
+  lv_obj_set_scrollbar_mode(scr, LV_SCROLLBAR_MODE_OFF);
+}
+
+#define MAX_DEMO_COUNT 3
 lv_obj_t *screens[MAX_DEMO_COUNT];
 static int screen_index = 0;
 
@@ -77,6 +87,7 @@ void slides_demo(void) {
   size_t index = 0;
   demo_pm5544(screens[index++]);
   demo_rhino(screens[index++]);
+  demo_hello_world(screens[index++]);
 
   assert(index <= MAX_DEMO_COUNT);
 

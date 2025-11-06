@@ -8,3 +8,4 @@ sdkconfig.ci
 debug.log
 .vscode/
 *.code-workspace
+.cache
