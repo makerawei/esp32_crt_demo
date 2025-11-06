@@ -57,6 +57,8 @@ void demo_rhino(lv_obj_t *scr) {
 }
 
 void demo_hello_world(lv_obj_t *scr) {
+  lv_obj_set_style_bg_color(scr, lv_color_black(), LV_STATE_DEFAULT);
+  
   lv_obj_t *label = lv_label_create(scr);
   lv_label_set_text(label, "你好！hello world");
   extern lv_font_t lv_font_msyh_20;
